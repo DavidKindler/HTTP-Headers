@@ -1,0 +1,94 @@
+﻿body {
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+    font-size: 13px;
+    padding-top:51px;
+}
+.alert {
+    margin: 0
+}
+table {
+    background-color: #fafafa
+}
+#responseList td {
+    cursor: pointer
+}
+.codeBlock {
+    font-size: 11pt;
+    font-family: 'Courier';
+    margin: 0
+}
+#ExportModal {
+    left: 0;
+    margin-left: 0;
+    width: 100%
+}
+#responseList {
+    border-top-width: 0;
+    table-layout: fixed;
+}
+.table {
+    margin: 0
+}
+h5 {
+    margin: 0;
+    padding: 0
+}
+.inputUrl {
+    width: 230px;
+    font-size: 8pt;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer
+}
+td.rId {
+    width: 24px;
+    text-align: center
+}
+td.rMe {
+    width: 46px;
+    text-align: center
+}
+td.rSt {
+    width: 39px;
+    text-align: center
+}
+: : -webkit-scrollbar {
+    width: 10px;
+    height: 10px
+}
+: : -webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #fafafa;
+    -webkit-border-radius: 10px;
+    border-radius: 10px
+}
+: : -webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #333;
+    -webkit-box-shadow: inset 0 0 6px #fff
+}
+: : -webkit-scrollbar-thumb: window-inactive {
+    background: #333
+}
+
+.status { width: 38px; text-align: center;  }
+.badge {font-size:10px;}
+
+.nav {background-color: transparent;}
+
+.navbar-nav > li {margin-right:10px; margin-top:4px;}
+
+.navbar-nav > li > a {padding:10px 15px; border-radius: 10px; border:1px solid aquamarine; outline:none; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color: #eee; }
+
+
+tr.active {background-color: snow;}
+// .navbar-nav li.active {background-color: #eee;} 
+// .navbar-nav li.active a {background-color: linen;} 
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color: MintCream;}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {background-color: #eee; }
