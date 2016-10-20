@@ -4,18 +4,20 @@
     background-color: #f8f8f8;
     font-size: 13px;
     padding-top:51px;
+    font-family: 'Rubik', sans-serif;
 }
 .alert {
     margin: 0
 }
 table {
-    background-color: #fafafa;
+    background-color: azure;
     // width:inherit;
 
 }
 
 // .table { width:inherit;}
 
+thead {background-color: darkturquoise;}
 
 table#mainLayout {table-layout: fixed;}
 
@@ -39,6 +41,8 @@ table#mainLayout {table-layout: fixed;}
 .table {
     margin: 0
 }
+
+.table tbody tr.success>td {background-color:  khaki;}
 h5 {
     margin: 0;
     padding: 0
@@ -85,13 +89,42 @@ td.rSt {
 .badge {font-size:10px;}
 
 .nav {background-color: transparent;}
-.navbar.container {width:1600px;}
+
+.navbar {margin-bottom: 0px;}
+.navbar.container {width:1600px; 
+   
+    zoom: 1;
+    background: #36b0b6;
+    background: -moz-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #36b0b6), color-stop(100%, #2a8a8f));
+    background: -webkit-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
+    background: -o-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
+    background: -ms-linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
+    background: linear-gradient(top, #36b0b6 0%, #2a8a8f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@top-color', endColorstr='@bottom-color', GradientType=0);
+    // padding: 5px 10px;
+    // -webkit-border-radius: 5px;
+    // -moz-border-radius: 5px;
+    // -ms-border-radius: 5px;
+    // -o-border-radius: 5px;
+    // border-radius: 5px;
+
+}
+
+.navbar.container .navbar-header {padding:0px 20px;}
+
 .navbar-nav > li {margin-right:10px; margin-top:4px;}
 
-.navbar-nav > li > a {padding:10px 15px; border-radius: 10px; border:1px solid aquamarine; outline:none; }
+.navbar-nav > li > a {
+    padding:10px 15px; 
+    border-radius: 10px;  
+    outline:none; 
+    // border:1px solid aquamarine;
+}
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color: #eee; }
 
+.navbar-default .navbar-brand {color:white; font-weight: bold;}
 
 tr.active {background-color: snow;}
 // .navbar-nav li.active {background-color: #eee;} 
@@ -119,3 +152,5 @@ input.form-control {
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+
+#urlClear {background-color: darkcyan!important; background-image:none;}
