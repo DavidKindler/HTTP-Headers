@@ -1,52 +1,58 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>HTTP Headers</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/live.min.css" type="text/css" />
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/general.min.js"></script>
-    <script src="js/live.min.js"></script>
+ <title>HTTP Headers</title>
+ <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+ <link rel="stylesheet" href="css/live.min.css" type="text/css" />
+ <script src="js/jquery.3.1.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="js/live.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="navbar-header">
-      <a class="navbar-brand" href="#">HTTP Headers</a>
-    </div>
-    <ul class="nav navbar-nav">
+    <nav class="navbar navbar-default navbar-fixed-top container">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">HTTP Headers</a>
+      </div>
+      <ul class="nav navbar-nav">
         <li class="active"><a href="#" id="capture"><i class="icon-ok-circle"></i>Capture</a></li>
         <li><a href="#" id="rawView"><i class="icon-ban-circle"></i>Raw</a></li>
         <li><a href="#" id="clearAll"><i class="icon-remove"></i>Clear</a></li>
         <li><a href="#myModal" role="button" id="settings" data-toggle="modal"><i class="icon-wrench"></i>Settings</a></li>
-		<!-- <li><a href="#ExportModal" role="button" id="showAll" data-toggle="modal"><i class="icon-download-alt"></i>Show all</a></li> -->
+        <li>
+            <div class="input-group">
+            <input id="filter" type="text" class="form-control" placeholder="URL filter...">
+            <!-- <button class="btn btn-primary" id="urlFilter">URL Filter</button> -->
+            <button class="btn btn-warning" id="urlClear">Clear</button>
+        </div>
+        </li>
+        <!-- <li><a href="#ExportModal" role="button" id="showAll" data-toggle="modal"><i class="icon-download-alt"></i>Show all</a></li> -->
     </ul>
 </nav>
-    <table id="mainTable" class="table table-bordered table-condensed">
-        <thead>
-            <tr>
-                <th style="width: 25px; text-align: center;">#</th>
-                <th style="width: 40px; text-align: center;">Method</th>
-                <th class="status" >Status</th>
-                <th style="width: 256px;">Url</th>
-                <th>Headers</th>
-            </tr>
-        </thead>
+<table id="mainTable" class="table table-bordered table-condensed">
+    <thead>
         <tr>
-            <td colspan="4" style="width: 400px; padding: 0px;">
-                <div class="results" style="overflow: auto; height: 100%; width: 100%; max-width:409px;">
-                    <table id="responseList" class="table table-condensed table-hover table-bordered">
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </td>
-            <td style="padding: 0px;" id="previewArea">
-                <div style="padding:10px;font-weight:bold;">
-                    <p>
-                        HTTP Headers logs all HTTP traffic between Google Chrome and the Internet.<br />Open a new tab and type any Url to start logging or just wait until some background HTTP request starts.<br />
-                    </p>
-                    <!-- <hr /> -->
+            <th style="width: 25px; text-align: center;">#</th>
+            <th style="width: 40px; text-align: center;">Method</th>
+            <th class="status" >Status</th>
+            <th style="width: 256px;">Url</th>
+            <th>Headers</th>
+        </tr>
+    </thead>
+    <tr>
+        <td colspan="4" style="width: 400px; padding: 0px;">
+            <div class="results" style="overflow: auto; height: 100%; width: 100%; max-width:409px;">
+                <table id="responseList" class="table table-condensed table-hover table-bordered">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+        <td style="padding: 0px;" id="previewArea">
+            <div style="padding:10px;font-weight:bold;">
+                <p>
+                    HTTP Headers logs all HTTP traffic between Google Chrome and the Internet.<br />Open a new tab and type any Url to start logging or just wait until some background HTTP request starts.<br />
+                </p>
+                <!-- <hr /> -->
                    <!--  <p>
                         Don't forget to share this extension on <a href="https://www.facebook.com/sharer/sharer.php?u=https://chrome.google.com/webstore/detail/live-http-headers/iaiioopjkcekapmldfgbebdclcnpgnlo" target="_blank">Facebook</a>, <a href="https://plus.google.com/share?url=https://chrome.google.com/webstore/detail/live-http-headers/iaiioopjkcekapmldfgbebdclcnpgnlo" target="_blank">Google+</a> and <a href="http://twitter.com/intent/tweet?text=Live HTTP Headers for Google Chrome&url=https://chrome.google.com/webstore/detail/live-http-headers/iaiioopjkcekapmldfgbebdclcnpgnlo" target="_blank">Twitter</a> if you want others to find it.<br />
                         You can also <a href="https://chrome.google.com/webstore/detail/live-http-headers/iaiioopjkcekapmldfgbebdclcnpgnlo/reviews" target="_blank">rate this extension</a> if you like it.
@@ -67,55 +73,55 @@
                         <label class="checkbox">
                             <input id="setMainFrame" type="checkbox">
                             Document</label><br />
-                        <label class="checkbox">
-                            <input id="setSubFrame" type="checkbox">
-                            Frames & Iframes</label><br />
-                        <label class="checkbox">
-                            <input id="setStylesheet" type="checkbox">
-                            Stylesheets</label><br />
-                        <label class="checkbox">
-                            <input id="setScript" type="checkbox">
-                            Scripts</label><br />
-                        <label class="checkbox">
-                            <input id="setImage" type="checkbox">
-                            Images</label><br />
-                        <label class="checkbox">
-                            <input id="setXHR" type="checkbox">
-                            XMLHttpRequests</label><br />
-                        <label class="checkbox">
-                            <input id="setObject" type="checkbox">
-                            Objects</label><br />
-                        <label class="checkbox">
-                            <input id="setOther" type="checkbox">
-                            Other</label><br />
-                    </td>
-                    <td>
-                        <b>View headers</b><br />
-                        <label class="checkbox">
-                            <input type="radio" name="viewType" id="viewTypeRaw" />
-                            Raw</label><br />
-                        <label class="checkbox">
-                            <input type="radio" name="viewType" id="viewTypeNice" />
-                            Formated</label><br />
-                        <br />
-                        <b>View list</b><br />
-                        <label class="checkbox">
-                            <input type="radio" name="orderType" id="listAscending" />
-                            Ascending order</label><br />
-                        <label class="checkbox">
-                            <input type="radio" name="orderType" id="listDescending" />
-                            Descending order</label><br />
-                        <br />
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</a>
-            <a href="#" id="saveSettings" class="btn btn-success">Save changes</a>
-        </div>
-    </div>
-	
+                            <label class="checkbox">
+                                <input id="setSubFrame" type="checkbox">
+                                Frames & Iframes</label><br />
+                                <label class="checkbox">
+                                    <input id="setStylesheet" type="checkbox">
+                                    Stylesheets</label><br />
+                                    <label class="checkbox">
+                                        <input id="setScript" type="checkbox">
+                                        Scripts</label><br />
+                                        <label class="checkbox">
+                                            <input id="setImage" type="checkbox">
+                                            Images</label><br />
+                                            <label class="checkbox">
+                                                <input id="setXHR" type="checkbox">
+                                                XMLHttpRequests</label><br />
+                                                <label class="checkbox">
+                                                    <input id="setObject" type="checkbox">
+                                                    Objects</label><br />
+                                                    <label class="checkbox">
+                                                        <input id="setOther" type="checkbox">
+                                                        Other</label><br />
+                                                    </td>
+                                                    <td>
+                                                        <b>View headers</b><br />
+                                                        <label class="checkbox">
+                                                            <input type="radio" name="viewType" id="viewTypeRaw" />
+                                                            Raw</label><br />
+                                                            <label class="checkbox">
+                                                                <input type="radio" name="viewType" id="viewTypeNice" />
+                                                                Formated</label><br />
+                                                                <br />
+                                                                <b>View list</b><br />
+                                                                <label class="checkbox">
+                                                                    <input type="radio" name="orderType" id="listAscending" />
+                                                                    Ascending order</label><br />
+                                                                    <label class="checkbox">
+                                                                        <input type="radio" name="orderType" id="listDescending" />
+                                                                        Descending order</label><br />
+                                                                        <br />
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="#" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</a>
+                                                            <a href="#" id="saveSettings" class="btn btn-success">Save changes</a>
+                                                        </div>
+                                                    </div>
+                                                    
 	<!-- <div id="ExportModal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
         <div class="modal-header">
             <h3 id="ExportModalLabel">Show all</h3>
