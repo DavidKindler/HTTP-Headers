@@ -4,23 +4,12 @@
    },
    "browser_action": {
       "default_icon": "img/requrl.png",
-      // "default_icon": {
-      //    "19": "img/requrl.png",
-      //    "38": "img/icon38.png"
-      // },
       "default_title": "HTTP Headers"
    },
    "description": "Monitor HTTP/HTTPs traffic from your browser.",
-   // "icons": {
-   //    "128": "img/icon128.png",
-   //    "16": "img/icon16.png",
-   //    "48": "img/icon48.png"
-   // },
-   // "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCXzowpwCkP1zHLRA9zMR3HPHZHYqsV8g5cmBB9rO7xpWBVjtyzSZ0WDORLc4KCJGj+dvhSaMsNXzQ+i0/0VNc8Mh2T7I289bllc4hZUE/UED84KxCjLwsoegETPrgXXIlfffNNSlduy2MHMFhBo08IKyg+PNtgz/0Y8FtM98jtLQIDAQAB",
-   "manifest_version": 2,
-   "name": "HTTP Headers",
-   "offline_enabled": true,
-   "permissions": [ "webRequest", "webRequestBlocking", "tabs", "http://*/", "https://*/", "\u003Call_urls>" ],
-   // "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.0"
+     "manifest_version": 2,
+     "name": "HTTP Headers",
+     "offline_enabled": true,
+     "permissions": [ "webRequest", "webRequestBlocking", "tabs", "http://*/", "https://*/", "\u003Call_urls>" ],
+   "version": "1.1"
 }
