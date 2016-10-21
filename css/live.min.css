@@ -119,6 +119,7 @@ td.rSt {
     padding:10px 15px; 
     border-radius: 10px;  
     outline:none; 
+    line-height: 23px;
     // border:1px solid aquamarine;
 }
 
@@ -130,7 +131,7 @@ tr.active {background-color: snow;}
 // .navbar-nav li.active {background-color: #eee;} 
 // .navbar-nav li.active a {background-color: linen;} 
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color: MintCream;}
+.navbar-default .navbar-nav  a.active, .navbar-default .navbar-nav a.active:hover, .navbar-default .navbar-nav  a.active:focus {background-color: aquamarine;}
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {background-color: #eee; }
 div.input-group {margin-top:4px;}
@@ -154,3 +155,26 @@ input.form-control {
 }
 
 #urlClear {background-color: darkcyan!important; background-image:none;}
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #123B3D;
+}
+
+.svg-icon circle {
+  stroke: #123B3D;
+  stroke-width: 1;
+}
